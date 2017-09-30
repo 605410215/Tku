@@ -1,0 +1,22 @@
+'''columns=['msno','x_login_type','song_id','played_at','song_length','played_length','day','album_id','artist_id','dict_count','finish_count','song_count']
+dataset2=pd.DataFrame(columns=columns)
+dataset2=dataset2.groupby('artist_id').count()
+total=0
+for i in range(97,101,1):
+    for j in range(97,123,1):
+        m='a'+chr(i)+chr(j)
+        dataset=pd.read_csv(m,sep='\t')
+        k=len(dataset)
+        print k
+        dataset=dataset.groupby('artist_id').count()
+        dataset2=dataset2.add(dataset,fill_value=0)
+        print len(dataset)
+        total=total+k
+        #dataset=dataset.drop(['month','year','count','double_count'],axis=1)
+        #dataset.to_csv(m,sep='\t',encoding='utf-8',index=False)
+        print m
+        print '-----------------------'
+        if(i==100 and j==108):c
+            break
+print '*******'
+print total'''
